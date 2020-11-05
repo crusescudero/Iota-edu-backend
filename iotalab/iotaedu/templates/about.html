@@ -1,0 +1,79 @@
+<!-- use the base html -->
+{% extends 'base.html' %}
+
+<!-- Adds the title to the page -->
+{% block title %}
+  {{ title }}
+{% endblock title %}
+
+<!-- Content for the page (using the template) -->
+{% block content %}
+  <div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="../static/assets/img/IOTAEDU_LOGO.png"></div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header center">Nosotros</h2>
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="../static/assets/img/us1.jpg">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content text-darken-4 purple-text left">
+              <p><h5>En Iota Lab nos dedicamos a la creación y fabricación de hardware electrónico, 
+                basados en microcontroladores y sistemas de comunicación, con el fin de facilitar y 
+                hacer más rápido el desarrollo de los proyectos e ideas de nuestros clientes.</h5><br/></p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="../static/assets/img/pic3.png"></div>
+    </div>
+
+    <div class="section white">
+      <div class="row container">
+        <div class="card horizontal">
+          <div class="card-stacked">
+            <div class="card-content text-darken-4 purple-text">
+              <p><h5>En Iota Lab creamos e impartimos cursos de capacitación en las distintas áreas de la tecnología. 
+              Enfocamos nuestra oferta de cursos en niños, jóvenes y profesionales de distintas áreas. 
+              Ofrecemos cursos cerrados en las áreas de programación, electrónica, robótica educativa, etc.</h5></p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="../static/assets/img/card2.jpg"></div>
+    </div>
+  
+    <div class="section white">
+      <div class="row container">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="../static/assets/img/us2.jpg">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content text-darken-4 purple-text">
+              <p><h5>En Iota Lab creemos en el poder de la enseñanza. 
+              Al elegirnos, estará confiando en un grupo de personas apasionadas 
+              por la tecnología y la educación y comprometidos en formar y potenciar 
+              las habilidades del siglo XXI en las nuevas generaciones.</h5></p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="../static/assets/img/card1.jpg"></div>
+    </div>
+
+  </div>
+{% endblock content %}

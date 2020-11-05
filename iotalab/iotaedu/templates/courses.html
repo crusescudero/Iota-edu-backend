@@ -1,0 +1,54 @@
+<!-- use the base html -->
+{% extends 'base.html' %}
+
+<!-- Adds the title to the page -->
+{% block title %}
+  {{ title }}
+{% endblock title %}
+
+<!-- Content for the page (using the template) -->
+{% block content %}
+  <div>
+    <div class="txt_body salto center-align">
+      <h1>Cursos</h1>
+      <p>Te invitamos a conocer nuestra oferta de cursos, dirigidos a aficionados, profesionales, profesores, estudiantes, etc.</p>
+      Si necesitas un curso a tu medida ¡Contáctanos!
+    </div>
+
+
+    <div class="row">
+      <!-- <div class="col s12 m10"> -->
+        <div class="cardGrid">
+        {% if getCoursesList %}
+          {% for course in getCoursesList %}
+          <!-- <div class="col s12 m5"> -->
+            <div class="cardContainer">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  {% load static %}
+                  <img class="activator" src="{% static course.course_image.name %}" />
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator purple-text text-darken-4 txt_card">{{ course.course_name }}<i class="material-icons right">info_outline</i></span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title purple-text text-darken-4">Información del curso<i class="material-icons right">close</i></span>
+                  <p><b>Descripción del curso:</b> {{ course.course_description }}</p>
+                  <p><b>Objetivos:</b> {{ course.course_objectives }}</p>
+                  <p><b>Materiales:</b> {{ course.course_materials }}</p>
+                  <p><b>Próxima fecha:</b> {{ course.course_nextDate }}</p>
+                  <p><b>Precio:</b> {{ course.course_price }}</p>
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+        {% else %}
+            <p>No courses are available.</p>
+        {% endif %}
+      </div>
+    </div>
+
+
+
+  </div>
+{% endblock content %}
