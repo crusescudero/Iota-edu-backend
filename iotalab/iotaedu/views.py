@@ -61,8 +61,8 @@ def contact(request):
             send_mail(
                 'Nuevo mensaje - IotaEducation',
                 mail_txt,
-                settings.EMAIL_HOST_USER,
-                settings.EMAIL_HOST_USER,
+                email,
+                [settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
 
