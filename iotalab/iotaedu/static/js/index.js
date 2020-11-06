@@ -30,5 +30,3 @@ document.addEventListener('DOMContentLoaded', function() {
       interval:2500
     });
 }); 
-
-

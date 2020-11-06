@@ -9,3 +9,4 @@ class Courses(models.Model):
   course_objectives = models.CharField(max_length=300)
   course_description = models.CharField(max_length=300)
   course_image = models.ImageField(upload_to='iotaedu/static/assets/img')
+  course_url = models.CharField(max_length=500)

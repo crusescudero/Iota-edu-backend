@@ -12,7 +12,7 @@
     <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="../static/css/index.css">
     <script type="text/javascript" src="../static/js/index.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
       $('.parallax').parallax();
@@ -32,6 +32,14 @@
             <li><a href="/courses/" class="nav-enlace hideResponsiveMenu">Cursos</a></li>
             <li><a href="/about/" class="nav-enlace hideResponsiveMenu">Nosotros</a></li>
             <li><a href="/contact/" class="nav-enlace hideResponsiveMenu">Contacto</a></li>
+            {% if user.is_authenticated %}
+              <li><p class="userGreet">Bienvenido {{ user.username }}</p></li>
+              <li><a class="btn btn-primary logoutBTN" href="{% url 'logout'%}">Cerrar Sesión</a></li>
+
+            {% else %} 
+              <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
+              <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
+            {% endif %} 
           </ul>
         </div>
         <ul class="sidenav" id="slide-out">
@@ -40,12 +48,14 @@
           <li><a href="/courses/" class="nav-enlace hideResponsiveMenu">Cursos</a></li>
           <li><a href="/about/" class="nav-enlace hideResponsiveMenu">Nosotros</a></li>
           <li><a href="/contact/" class="nav-enlace hideResponsiveMenu">Contacto</a></li>
+          <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
+          <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
         </ul>
       </nav>
 
       <div>
         {% block content %}
-        <p class="mainText"">Placeholder text in base template. Replace with page  content.</p>
+          <p class="mainText"">Placeholder text in base template. Replace with page  content.</p>
         {% endblock content %}
       </div>
       <script type="text/javascript" src="../static/js/materialize.min.js"></script>
