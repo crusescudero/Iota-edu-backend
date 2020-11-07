@@ -49,8 +49,15 @@
           <li><a href="/about/" class="nav-enlace hideResponsiveMenu">Nosotros</a></li>
           <li><a href="/contact/" class="nav-enlace hideResponsiveMenu">Contacto</a></li>
           <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
-          <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
-        </ul>
+          {% if user.is_authenticated %}
+              <li><p class="userGreet">Bienvenido {{ user.username }}</p></li>
+              <li><a class="btn btn-primary logoutBTN" href="{% url 'logout'%}">Cerrar Sesión</a></li>
+
+            {% else %} 
+              <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
+              <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
+            {% endif %} 
+          </ul>
       </nav>
 
       <div>
