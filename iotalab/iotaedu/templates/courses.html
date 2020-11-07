@@ -39,7 +39,7 @@
                   <p><b>Próxima fecha:</b> {{ course.course_nextDate }}</p>
                   <p><b>Precio:</b> {{ course.course_price }}</p>
                   {% if user.is_authenticated %}
-                    <a class="btn btn-primary"  target="_blank" href="https://{{course.course_url}}">Descargar Curso</a>
+                    <a class="btn purple darken-4"  target="_blank" href="https://{{course.course_url}}">Descargar información del curso</a>
                   {% endif %} 
                 </div>
               </div>
