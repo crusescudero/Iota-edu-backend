@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}
+        {{ page_title | default:"Iotalab Educacion" }}
+      {% endblock title %}
+    </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script type="text/javascript" src="../static/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+      $('.parallax').parallax();
+      });
+    </script>
+  </head>
+
+  <body class="index_body">  
+      <nav class="nav-wrapper">
+        <div class="container">
+          <a href="/" class="brand-logo left"><img src="../static/assets/img/logo inicio.png"></a>
+          
+          <a href="#" data-target="slide-out" class="sidenav-trigger right" style="color:#440099;"><i class="material-icons">menu</i></a>
+          
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/" class="nav-enlace hideResponsiveMenu">Inicio</a></li>
+            <li><a href="/courses/" class="nav-enlace hideResponsiveMenu">Cursos</a></li>
+            <li><a href="/about/" class="nav-enlace hideResponsiveMenu">Nosotros</a></li>
+            <li><a href="/contact/" class="nav-enlace hideResponsiveMenu">Contacto</a></li>
+            {% if user.is_authenticated %}
+              <li><p class="userGreet">Bienvenido {{ user.username }}</p></li>
+              <li><a class="btn btn-primary logoutBTN" href="{% url 'logout'%}">Cerrar Sesión</a></li>
+
+            {% else %} 
+              <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
+              <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
+            {% endif %} 
+          </ul>
+        </div>
+        <ul class="sidenav" id="slide-out">
+          <li><a class="sidenav-close" href="#!" style="background-color: #a2a2a2;"><b>Cerrar (X)</b></a></li>
+          <li><a href="/" class="nav-enlace hideResponsiveMenu">Inicio</a></li>
+          <li><a href="/courses/" class="nav-enlace hideResponsiveMenu">Cursos</a></li>
+          <li><a href="/about/" class="nav-enlace hideResponsiveMenu">Nosotros</a></li>
+          <li><a href="/contact/" class="nav-enlace hideResponsiveMenu">Contacto</a></li>
+          {% if user.is_authenticated %}
+              <li><p class="userGreet">Bienvenido {{ user.username }}</p></li>
+              <li><a class="btn btn-primary logoutBTN" href="{% url 'logout'%}">Cerrar Sesión</a></li>
+
+            {% else %} 
+              <li><a href="/register/" class="nav-enlace hideResponsiveMenu">Registrarse</a></li>
+              <li><a href="/login/" class="nav-enlace hideResponsiveMenu">Ingresa</a></li>
+            {% endif %} 
+          </ul>
+      </nav>
+
+      <div>
+        {% block content %}
+          <p class="mainText"">Placeholder text in base template. Replace with page  content.</p>
+        {% endblock content %}
+      </div>
+      <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+  </body>
+
+    <!-- Footer -->
+    <footer class="page-footer main_footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5>Iota Lab SpA.</h5>
+            <p> <i class="material-icons icono">mail</i> contacto@iotalab.cl<br/>
+              <i class="material-icons icono">local_phone</i> +56 9 5555 555<br/>
+              <i class="material-icons icono">language</i> <a class=links href="https://www.iotalab.cl/">www.iotalab.cl</a>
+            </p>
+          </div>
+          
+          <div class="col l4 s12">
+            <h5>Siguenos en:</h5>
+            <ul>
+              <li><a class=links href="https://www.instagram.com/iota.lab/">Instagram</a></li>
+              <li><a class=links href="https://www.facebook.com/Iota-Lab-106145781073499/">Facebook</a></li>
+            </ul>
+          </div>
+
+          <div class="col l4 s12">
+            <h5>Indicadores economicos:</h5>        
+            {%for moneda in context%}
+              <p>{{moneda}}</p>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+          <div class="container">
+            © 2020 Iota Lab SpA.
+          </div>
+      </div>
+  </footer>
+</html>

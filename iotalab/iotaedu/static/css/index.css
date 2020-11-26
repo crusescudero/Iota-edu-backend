@@ -1,0 +1,200 @@
+/* Importación de fuentes */
+@font-face {
+    font-family: 'Oswald';
+    src: URL('Oswald-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.userGreet{
+    color: #440099 !important;
+    margin: 0 0 0 25px;
+    font-family: 'Oswald';
+}
+
+.logoutBTN{
+    background-color:  #440099;
+    border-radius: 8px;
+}
+
+.logoutBTN:hover {
+    background-color: #df1995;;
+}
+
+.cardGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.contactContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.contactFill{
+    width: 70%;
+}
+
+.cardContainer{
+    width: 100%;
+    padding: 2%;
+}
+
+.mainContent{
+    margin-top: 10%;
+}
+
+.mainText{
+    color: white;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.index_body{
+    background:#25064b;
+    font-family: 'Oswald';
+}
+
+.txt_body {
+    font-family: 'Oswald';
+    color: white;
+    font-size: x-large;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.txt_card{
+    
+    color:#440099;
+    font-weight: 400;
+    font-family: 'Oswald';
+}
+
+.contenido_card{
+    min-height: 22vh;
+    max-height: 22vh;
+}
+
+.main_nav{
+    margin: 0px;
+ 
+}
+
+.index_card{
+    font-family:'Oswald';
+    align-items: center;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+.img_card{
+    max-width: 50hv;
+}
+
+.nav-enlace{
+    display: inline-block;
+    color:#440099;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Oswald';
+    text-decoration: none;
+}
+
+.nav-enlace:hover{
+    background:#df1995;
+}
+
+nav{
+    background:#fafafa;
+    position: fixed;
+    top: 20;
+    padding-left: 20px;
+    z-index:1000;
+}
+
+.nav-boton{
+    background:#440099;
+    color:#fff;
+    padding:10px 0;
+    border:2px solid #fff;
+    display: none;
+}
+
+.nav-boton:hover{
+    background:#df1995;
+}
+
+.salto{
+    padding-top: 50px;
+}
+.main_footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fafafa;
+    color:#440099;
+    text-decoration: none;
+    font-family: 'Oswald';
+}
+
+.links{
+    background-color: #fafafa;
+    color:#440099;
+    text-decoration: none;
+    font-family: 'Oswald';
+}
+
+.icono{
+    vertical-align: middle;
+}
+
+.footer-copyright{
+    color:#584f63 !important;
+}
+
+/* Media Query */
+/* Alinea el logo a la izq y el menu responsive a la derecha */
+@media (max-width: 1200px) {
+    .nav-wrapper {
+        flex-direction: revert;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .index_card{
+        font-family:'Oswald';
+        align-items: center;
+        margin-left: 7vh;
+        margin-right: 7vh;
+    }
+
+  }
+
+  @media (max-width: 900px) {
+
+    .contenido_card{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+
+    .index_card{
+        font-family:'Oswald';
+        align-items: center;
+        margin-left: 4vh;
+        margin-right: 4vh;
+    }
+  }
+.color{
+    color:#440099; 
+}

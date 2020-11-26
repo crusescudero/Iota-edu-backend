@@ -1,0 +1,38 @@
+<!-- use the base html -->
+{% extends 'base.html' %}
+
+<!-- Adds the title to the page -->
+{% block title %}
+  {{ title }}
+{% endblock title %}
+
+<!-- Content for the page (using the template) -->
+{% block content %}
+<div>
+  <div class="txt_body salto center-align">
+    <h1>Iniciar sesión</h1>
+    <p>Ingresa a nuestros cursos </br>¡Atrévete y crea grandes proyectos con nosotros!</p>
+    <div class="section container">
+      <div class="row">
+        <form class="col s12"  method="post">
+          {% csrf_token %}
+          <div class="row card-panel contactContainer">
+            <div class="input-field col contactFill">
+              {{ form.as_p }}
+              <button class="btn purple darken-4" type="submit">Iniciar Sesión</button>
+              <div>
+                {% for message in messages %}
+                <a id="messages">{{message}}</a>
+              {% endfor %}
+              </div>
+              <div></br><a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a></div>
+              <div><a href="/password_reset/">¿Olvidaste tu contraseña?</a></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

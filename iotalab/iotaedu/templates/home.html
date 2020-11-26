@@ -1,0 +1,91 @@
+<!-- use the base html -->
+{% extends 'base.html' %}
+
+<!-- Adds the title to the page -->
+{% block title %}
+  {{ title }}
+{% endblock title %}
+
+<!-- Content for the page (using the template) -->
+{% block content %}
+  <div>
+    <!-- slider -->
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <a class="carousel-item" href="#"><img src="../static/assets/img/pic1.png"></a>
+          <div class="caption center-align txt_card">
+            <h1 style="color:#440099 ">IOTA LAB EDUCATION</h1>
+          </div>
+        </li> 
+        <li>
+          <a class="carousel-item" href="#"><img src="../static/assets/img/pic2.png"></a>
+          <div class="caption center-align txt_body">
+            <h3>EDUCACION</h3>
+            <h5 class="light">Certificada</h5>
+          </div>
+        </li>
+        <li>
+          <a class="carousel-item" href="#"><img src="../static/assets/img/pic3.png"></a>
+          <div class="caption right-align txt_body">
+            <h3>COMPROMETIDOS</h3>
+            <h5 class="light">Con La Enseñanza</h5>
+          </div>
+        </li>
+        <li>
+          <a class="carousel-item" href="#"><img src="../static/assets/img/pic4.png"></a>
+          <div class="caption left-align txt_body">
+            <h3>CURSOS</h3>
+            <h5 class="light">Electrónica, Programación, etc.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>  
+    <!-- end slider -->
+
+    <div class="txt_body center-align" >
+      <h4><p>Trabajando es la única forma en que logramos un buen resultado.</br></br>
+      “Cualquier cosa que pueda ser imaginada algún día se hará realidad.”</p></h4>
+    </div>
+
+
+    <div class="row index_card">
+      <!-- Card 1 -->
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="../static/assets/img/card1.jpg" alt="Que hacemos">
+            <span class="card-title ">¿Qué Hacemos?</span>
+          </div>
+          <div class="card-content contenido_card purple-text text-darken-4">
+            <p>Creamos e impartimos cursos de capacitación en las 
+            distintas áreas de la tecnología. Enfocamos nuestra oferta de cursos
+            en niños, jóvenes y profesionales de distintas áreas. Ofrecemos cursos
+            en las áreas de programación, electrónica, robótica, etc.</p>
+          </div>
+          <div class="card-action">
+            <a href="courses/" class="purple-text text-darken-4" >Conoce nuestros cursos</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="../static/assets/img/card2.jpg"alt="Por qué elegirnos">
+            <span class="card-title" >¿Por qué elegirnos?</span>
+          </div>
+          <div class="card-content contenido_card purple-text text-darken-4">
+            <p>En Iota Lab creemos en el poder de la enseñanza. Al elegirnos, estará 
+            confiando en un grupo de personas 
+            apasionadas por la tecnología y la educación y comprometidos en formar y 
+            potenciar las habilidades del siglo XXI en las nuevas generaciones.</p>
+          </div>
+          <div class="card-action">
+            <a href="about/" class="purple-text text-darken-4">Más sobre nosotros</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
