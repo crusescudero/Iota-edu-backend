@@ -22,7 +22,7 @@ urlpatterns = [
     path('done/', auth_views.PasswordResetCompleteView.as_view(template_name='done.html'),
      name='password_reset_done'),
 
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
     
@@ -30,5 +30,5 @@ urlpatterns = [
     name='password_reset_complete'),
 
     path('api/',include(router.urls)),
-    path('oauth/', include('social_django.urls', namespace='social'))
+    
 ]

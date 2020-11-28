@@ -87,11 +87,14 @@
             </ul>
           </div>
 
+          {% if monedas %}
           <div class="col l4 s12">
             <h5>Indicadores economicos:</h5>        
-            {%for moneda in context%}
-              <p>{{moneda}}</p>
+            {%for moneda in monedas%}
+              <p>{{moneda.codigo}} - {{moneda.valor}}</p>
             {%endfor%}
+          </div>
+          {% endif %}
           </div>
         </div>
       </div>

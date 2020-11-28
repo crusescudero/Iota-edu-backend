@@ -26,8 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SOCIAL_AUTH_FACEBOOK_KEY = '372438430728488'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'd20aeabbeed9dbc53d85f8f4ab9dabd0'
+SOCIAL_AUTH_FACEBOOK_KEY = '1718737598303978'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'fb55d700a561acd7754b181ad0c561a5'
 
 # Application definition
 
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'social_django'
+    'social_django',
+    'sslserver',
 
 ]
 
@@ -129,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+LOGIN_REDIRECT_URL = '/'
 
 # EMAIL SETTINGS
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

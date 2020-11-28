@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout, authenticate, login
 from iotaedu.forms import ContactForm, CreateUser, LoginUserForm
-
+from django.views.decorators.csrf import csrf_protect
 
 from django.contrib import messages
 
@@ -24,10 +24,10 @@ import urllib.request
 # Create your views here.
 
 def index(request):
-    
     title = "Home"
     valores = ["UF", "UTM", "USD"]
 
+    monedas = []
     context = {
         'title': title
     }
@@ -38,14 +38,12 @@ def index(request):
         moneda = json.loads(datos)
         valorMoneda = moneda["Valor"]
 
-        context[codigo] = valorMoneda
-    print(context)
+        monedas.append({"codigo": codigo, "valor": valorMoneda})
+
+    if len(monedas) > 0:
+        context["monedas"] = monedas
 
     return render(request, 'home.html', context)
-
-    
-    
-
 
 # Vista de cursos
 def courses(request):
