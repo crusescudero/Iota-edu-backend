@@ -138,7 +138,7 @@ nav{
     padding-top: 50px;
 }
 .main_footer {
-    position: relative;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     background-color: #fafafa;

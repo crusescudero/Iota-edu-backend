@@ -1,4 +1,3 @@
-from .models import Courses
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.mail import send_mail
@@ -13,6 +12,8 @@ from django.contrib import messages
 # rest_framework
 from rest_framework import status
 from rest_framework import viewsets
+
+from .models import Courses
 from .serializers import CoursesSerializer
 
 
@@ -150,5 +151,6 @@ def logoutUser(request):
 
 # clase de consulta 
 class CoursesViewSet(viewsets.ModelViewSet):
-    queryset=Courses.objects.all()
-    serializer_class=CoursesSerializer
+    serializer_class = CoursesSerializer
+    queryset = Courses.objects.all()
+    
